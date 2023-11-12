@@ -1,0 +1,26 @@
+<h1>Index Buku</h1>
+
+<a href="">Tambah Buku</a>
+<hr>
+
+<table border = "1">
+    <tr>
+        <th>Judul Buku</th>
+        <th>Publish</th>
+        <th colspan="2">Aksi</th>
+    </tr>
+    {% if in book_list%}
+        {% for buku in book_list %}
+        <tr>
+            <td>{{ buku.judul }}</td>
+            <td>{{ buku.publish }}</td>
+            <td> <a href="">Edit</a></td>
+            <td><a href="">Hapus</a></td>
+        </tr>
+        {% endfor %}
+    {{% else %}}
+    <tr>
+        <td colspan="4">Tidak ada buku yang tersedia</td>
+    </tr>
+    {% Endif %}
+</table>
